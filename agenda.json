@@ -1,0 +1,112 @@
+[
+  {
+    "titulo": "Matematica - Calculo",
+    "desc": "Feito",
+    "disciplina": "Matematica"
+  },
+  {
+    "titulo": "Historia - Revolucao Francesa",
+    "desc": "Escrever uma redacao sobre as causas da Revolucao Francesa.",
+    "disciplina": "Historia"
+  },
+  {
+    "titulo": "Historia - Idade Media",
+    "desc": "Fazer um resumo sobre o feudalismo e a influencia da Igreja.",
+    "disciplina": "Historia"
+  },
+  {
+    "titulo": "Historia - Brasil Colonia",
+    "desc": "Pesquisar sobre o ciclo do acucar e sua importancia economica.",
+    "disciplina": "Historia"
+  },
+  {
+    "titulo": "Biologia - Ecossistemas",
+    "desc": "Preparar uma apresentacao sobre os diferentes tipos de ecossistemas.",
+    "disciplina": "Biologia"
+  },
+  {
+    "titulo": "Biologia - Genetica",
+    "desc": "Estudar as leis de Mendel e resolver exercicios de heredograma.",
+    "disciplina": "Biologia"
+  },
+  {
+    "titulo": "Biologia - Citologia",
+    "desc": "Fazer um esquema da estrutura de uma celula animal e vegetal.",
+    "disciplina": "Biologia"
+  },
+  {
+    "titulo": "Portugues - Literatura",
+    "desc": "Ler o livro 'Dom Casmurro' e fazer uma analise critica.",
+    "disciplina": "Portugues"
+  },
+  {
+    "titulo": "Portugues - Gramatica",
+    "desc": "Revisar regras de concordancia nominal e verbal.",
+    "disciplina": "Portugues"
+  },
+  {
+    "titulo": "Portugues - Redacao",
+    "desc": "Escrever uma dissertacao sobre fake news.",
+    "disciplina": "Portugues"
+  },
+  {
+    "titulo": "Fisica - Mecanica",
+    "desc": "Resolver problemas de leis de Newton e movimento uniforme.",
+    "disciplina": "Fisica"
+  },
+  {
+    "titulo": "Fisica - Termodinamica",
+    "desc": "Estudar as leis da termodinamica e calcular eficiencia de maquinas termicas.",
+    "disciplina": "Fisica"
+  },
+  {
+    "titulo": "Quimica - Tabela Periodica",
+    "desc": "Memorizar os grupos principais e suas propriedades.",
+    "disciplina": "Quimica"
+  },
+  {
+    "titulo": "Quimica - Estequiometria",
+    "desc": "Balancear equacoes quimicas e calcular proporcoes.",
+    "disciplina": "Quimica"
+  },
+  {
+    "titulo": "Geografia - Cartografia",
+    "desc": "Praticar escalas e interpretar mapas tematicos.",
+    "disciplina": "Geografia"
+  },
+  {
+    "titulo": "Geografia - Globalizacao",
+    "desc": "Debater os impactos economicos e culturais da globalizacao.",
+    "disciplina": "Geografia"
+  },
+  {
+    "titulo": "Ingles - Vocabulario",
+    "desc": "Aprender 20 palavras novas e usa-las em frases.",
+    "disciplina": "Ingles"
+  },
+  {
+    "titulo": "Ingles - Listening",
+    "desc": "Assistir a um video em ingles e resumir o conteudo.",
+    "disciplina": "Ingles"
+  },
+  {
+    "titulo": "Artes - Movimentos Artisticos",
+    "desc": "Pesquisar sobre o Impressionismo e identificar obras famosas.",
+    "disciplina": "Artes"
+  },
+  {
+    "titulo": "Filosofia - Etica",
+    "desc": "Fazer uma pesquisa baseando-se em uma pergunta anti-etica",
+    "disciplina": "Filosofia"
+  },
+  {
+    "titulo": "Educacao Fisica - Saude",
+    "desc": "Elaborar um plano de exercicios semanais para condicionamento fisico.",
+    "disciplina": "Educacao Fisica"
+  },
+  {
+    "titulo": "Fisica-Prova sobre Gases",
+    "desc": "Estudar sobre gases e termodinamica",
+    "disciplina": "Fisica"
+  }
+]
