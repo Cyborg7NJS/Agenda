@@ -29,16 +29,17 @@ app.get('/', (req, res) => {
     const LA = lerAgendas();
     let agendaTable = '';
 
-    LA.forEach(agenda => {
-        const descricaoTruncada = truncarDescricao(agenda.desc || '', 100);
-        agendaTable += `
-            <tr>
-                <td>${agenda.titulo}</td>
-                <td>${descricaoTruncada}</td>
-                <td>${agenda.disciplina}</td>
-            </tr>
-        `;
-    });
+  LA.forEach((agenda, index) => {
+    const descricaoTruncada = truncarDescricao(agenda.desc || '', 100);
+    agendaTable += `
+        <tr class="tarefa" style="${index >= 10 ? 'display:none;' : ''}">
+            <td>${agenda.titulo}</td>
+            <td>${descricaoTruncada}</td>
+            <td>${agenda.disciplina}</td>
+        </tr>
+    `;
+});
+
 
     const htmlContent = fs.readFileSync('index.html', 'utf-8');
     const finalHtml = htmlContent.replace('{{agendaTable}}', agendaTable);
