@@ -5,23 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de Trabalhos Escolares </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="bootstrap-5.3.7-dist/css/bootstrap.css" rel="stylesheet">
         <style>
     .nav-link {
-        color: #333 !important; /* Cor padrão (preto escuro, por exemplo) */
+        color: #333 !important; 
     }
 
     .nav-link:hover {
-        color: #333 !important; /* Cor ao passar o mouse, se quiser manter o azul */
+        color: #333 !important;
     }
+
+
 </style>
 </head>
 
 <body>
 <nav class="navbar bg-body-tertiary">
-  <div class="container">
-      <img src="logo.png" alt="Bootstrap" width="50" height="50" class="d-inline-block align-text-top">
+  <div class="container d-flex justify-content-center">
+      <img src="logo.png" alt="Bootstrap" width="75" height="75">
   </div>
 </nav>
     <div class="container">
@@ -31,14 +32,17 @@
                     <th>Título</th>
                     <th>Descrição</th>
                     <th>Disciplina</th>
+                    <th>Data</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 {{agendaTable}}
             </tbody>
-        </table>
-    </div>
+          </table>
+          <button id="toggleMostrar" class="btn btn-outline-dark mb-3 mt-6">Mostrar mais</button>
+      </div>
+    
 <div class="card text-center mb-5 me-5 ms-5">
   <div class="card-header" id="funcoes">
     <ul class="nav nav-tabs card-header-tabs" id="tabTrabalhos" role="tablist">
@@ -79,9 +83,25 @@
     </div>
   </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
+    <script src="bootstrap-5.3.7-dist/js/bootstrap.js"></script>
+        
+        <script>
+    const btn = document.getElementById('toggleMostrar');
+    const linhas = document.querySelectorAll('.tarefa');
+    let mostrandoMais = false;
+    btn.addEventListener('click', () => {
+        mostrandoMais = !mostrandoMais;
+
+        linhas.forEach((tr, i) => {
+            if (i >= 15) {
+                tr.style.display = mostrandoMais ? '' : 'none';
+            }
+        });
+
+        btn.textContent = mostrandoMais ? 'Mostrar menos' : 'Mostrar mais';
+    });
+</script>
+
 </body>
 
 </html>

@@ -29,16 +29,18 @@ app.get('/', (req, res) => {
     const LA = lerAgendas();
     let agendaTable = '';
 
-    LA.forEach(agenda => {
-        const descricaoTruncada = truncarDescricao(agenda.desc || '', 100);
-        agendaTable += `
-            <tr>
-                <td>${agenda.titulo}</td>
-                <td>${descricaoTruncada}</td>
-                <td>${agenda.disciplina}</td>
-            </tr>
-        `;
-    });
+LA.forEach((agenda, index) => {
+    const descricaoTruncada = truncarDescricao(agenda.desc || '', 100);
+    agendaTable += `
+        <tr class="tarefa" style="${index >= 15 ? 'display:none;' : ''}">
+            <td>${agenda.titulo}</td>
+            <td>${descricaoTruncada}</td>
+            <td>${agenda.disciplina}</td>
+            <td>${agenda.data}</td>
+        </tr>
+    `;
+});
+
 
     const htmlContent = fs.readFileSync('index.html', 'utf-8');
     const finalHtml = htmlContent.replace('{{agendaTable}}', agendaTable);
@@ -82,7 +84,7 @@ app.get('/filtrar', (req, res) => {
                         </select>
                     </div>
                     <button type="submit" class="btn btn-outline-dark">Filtrar</button>
-                    <a href="/" class="btn btn-outline-secondary">Voltar</a>
+                    <a href="/" class="btn btn-secondary">Voltar</a>
                 </form>
             </div>
         </body>
@@ -121,6 +123,7 @@ app.post('/filtrar', (req, res) => {
                         <h5 class="card-title">${agenda.titulo}</h5>
                         <p class="card-text"><strong>Descrição:</strong> ${agenda.desc}</p>
                         <p class="card-text"><strong>Disciplina:</strong> ${agenda.disciplina}</p>
+                        <p class="card-text"><strong>Data:</strong> ${agenda.data}</p>
                     </div>
                 </div>
             `;
@@ -128,7 +131,7 @@ app.post('/filtrar', (req, res) => {
 
         resultadoHtml += `
                     <a class="btn btn-outline-dark" href="/filtrar">Nova busca</a>
-                    <a class="btn btn-outline-secondary" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -148,7 +151,7 @@ app.post('/filtrar', (req, res) => {
                 <div class="container mt-4">
                     <h1 class="text-danger">Nenhum trabalho encontrado para a disciplina "${disciplina}"</h1>
                     <a class="btn btn-outline-dark mt-3" href="/filtrar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -176,7 +179,7 @@ app.post('/adicionar', (req, res) => {
             <body class="bg-light">
                 <div class="container mt-4">
                     <h1>Agenda já existe. Não é possível adicionar duplicatas.</h1>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -200,7 +203,7 @@ app.post('/adicionar', (req, res) => {
                 <div class="container mt-4">
                     <h1>Agenda adicionada com sucesso.</h1>                    
                     <a class="btn btn-outline-dark mt-3" href="/adicionar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -230,6 +233,7 @@ app.get('/atualizar', (req, res) => {
                     ${options}
                 </select>
                 <button type="submit" class="btn btn-outline-dark">Editar</button>
+                <a class="btn btn-secondary" href="/">Voltar</a>
             </form>
         </body>
         </html>
@@ -240,7 +244,7 @@ app.get('/atualizar', (req, res) => {
 
 
 app.post('/atualizar', (req, res) => {
-    const { titulo, Ntitle, Ndisc, Ndesc } = req.body;
+    const { titulo, Ntitle, Ndisc, Ndesc, Ndata } = req.body;
     const LA = lerAgendas();
 
     const agendaIndex = LA.findIndex(agenda => agenda.titulo.toLowerCase() === titulo.toLowerCase());
@@ -258,7 +262,7 @@ app.post('/atualizar', (req, res) => {
                 <div class="container mt-4">
                     <h1>Título não encontrado</h1>                  
                     <a class="btn btn-outline-dark mt-3" href="/atualizar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -269,6 +273,7 @@ app.post('/atualizar', (req, res) => {
     LA[agendaIndex].titulo = Ntitle;
     LA[agendaIndex].disciplina = Ndisc;
     LA[agendaIndex].desc = Ndesc;
+    LA[agendaIndex].data = Ndata
 
     salvarDados(LA);
 
@@ -284,25 +289,11 @@ app.post('/atualizar', (req, res) => {
                 <div class="container mt-4">
                     <h1>Agenda atualizada com sucesso!</h1>              
                     <a class="btn btn-outline-dark mt-3" href="/atualizar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
         `);
-});
-
-app.get('/excluir', (req, res) => {
-    const LA = lerAgendas();
-    let options = '';
-
-    LA.forEach(agenda => {
-        options += `<option value="${agenda.titulo}">${agenda.titulo}</option>`;
-    });
-
-    const htmlContent = fs.readFileSync(path.join(__dirname, '/view/excluir.html'), 'utf-8');
-    const finalHtml = htmlContent.replace('{{opcoes}}', options);
-
-    res.send(finalHtml);
 });
 
 app.get('/editar', (req, res) => {
@@ -323,7 +314,7 @@ app.get('/editar', (req, res) => {
                 <div class="container mt-4">
                     <h1>Agenda não encontrada!</h1>              
                     <a class="btn btn-outline-dark mt-3" href="/atualizar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -358,14 +349,33 @@ app.get('/editar', (req, res) => {
                     <textarea name="Ndesc" class="form-control" placeholder="Digite a nova descrição" required></textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label for="Ndata" class="form-label">Nova Data</label>
+                    <input type="date" name="Ndata" class="form-control" value="${agenda.data}" required>
+                </div>
+
                 <button type="submit" class="btn btn-outline-dark mt-3">Salvar alterações</button>
-                <a href="/" class="btn btn-outline-dark mt-3">Cancelar</a>
+                <a href="/" class="btn btn-secondary mt-3">Cancelar</a>
             </form>
         </body>
         </html>
     `;
 
     res.send(htmlContent);
+});
+
+app.get('/excluir', (req, res) => {
+    const LA = lerAgendas();
+    let options = '';
+
+    LA.forEach(agenda => {
+        options += `<option value="${agenda.titulo}">${agenda.titulo}</option>`;
+    });
+
+    const htmlContent = fs.readFileSync(path.join(__dirname, '/view/excluir.html'), 'utf-8');
+    const finalHtml = htmlContent.replace('{{opcoes}}', options);
+
+    res.send(finalHtml);
 });
 
 app.post('/excluir', (req, res) => {
@@ -387,7 +397,7 @@ app.post('/excluir', (req, res) => {
                 <div class="container mt-4">
                     <h1>Agenda não encontrada!</h1>              
                     <a class="btn btn-outline-dark mt-3" href="/excluir">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -425,7 +435,7 @@ app.get('/excluir-confirmado', (req, res) => {
                 <div class="container mt-4">
                     <h1>Agenda não encontrada!</h1>              
                     <a class="btn btn-outline-dark mt-3" href="/atualizar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>
@@ -448,7 +458,7 @@ app.get('/excluir-confirmado', (req, res) => {
                 <div class="container mt-4">
                     <h1>A agenda "${titulo}" foi excluída com sucesso.</h1>        
                     <a class="btn btn-outline-dark mt-3" href="/atualizar">Tentar novamente</a>
-                    <a class="btn btn-outline-secondary mt-3" href="/">Voltar ao início</a>
+                    <a class="btn btn-secondary mt-3" href="/">Voltar</a>
                 </div>
             </body>
             </html>

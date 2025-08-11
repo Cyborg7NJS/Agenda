@@ -1,112 +1,140 @@
 [
   {
     "titulo": "Matematica - Calculo",
-    "desc": "Feito",
-    "disciplina": "Matematica"
+    "desc": "teste",
+    "disciplina": "Matematica",
+    "data": "2026-05-21"
   },
   {
     "titulo": "Historia - Revolucao Francesa",
     "desc": "Escrever uma redacao sobre as causas da Revolucao Francesa.",
-    "disciplina": "Historia"
+    "disciplina": "Historia",
+    "data": "2025-10-25"
   },
   {
     "titulo": "Historia - Idade Media",
     "desc": "Fazer um resumo sobre o feudalismo e a influencia da Igreja.",
-    "disciplina": "Historia"
+    "disciplina": "Historia",
+    "data": "2025-10-27"
   },
   {
     "titulo": "Historia - Brasil Colonia",
     "desc": "Pesquisar sobre o ciclo do acucar e sua importancia economica.",
-    "disciplina": "Historia"
+    "disciplina": "Historia",
+    "data": "2025-10-29"
   },
   {
     "titulo": "Biologia - Ecossistemas",
     "desc": "Preparar uma apresentacao sobre os diferentes tipos de ecossistemas.",
-    "disciplina": "Biologia"
+    "disciplina": "Biologia",
+    "data": "2025-11-01"
   },
   {
     "titulo": "Biologia - Genetica",
     "desc": "Estudar as leis de Mendel e resolver exercicios de heredograma.",
-    "disciplina": "Biologia"
+    "disciplina": "Biologia",
+    "data": "2025-11-03"
   },
   {
     "titulo": "Biologia - Citologia",
     "desc": "Fazer um esquema da estrutura de uma celula animal e vegetal.",
-    "disciplina": "Biologia"
+    "disciplina": "Biologia",
+    "data": "2025-11-05"
   },
   {
     "titulo": "Portugues - Literatura",
     "desc": "Ler o livro 'Dom Casmurro' e fazer uma analise critica.",
-    "disciplina": "Portugues"
+    "disciplina": "Portugues",
+    "data": "2025-11-08"
   },
   {
     "titulo": "Portugues - Gramatica",
     "desc": "Revisar regras de concordancia nominal e verbal.",
-    "disciplina": "Portugues"
+    "disciplina": "Portugues",
+    "data": "2025-11-10"
   },
   {
     "titulo": "Portugues - Redacao",
     "desc": "Escrever uma dissertacao sobre fake news.",
-    "disciplina": "Portugues"
+    "disciplina": "Portugues",
+    "data": "2025-11-12"
   },
   {
     "titulo": "Fisica - Mecanica",
     "desc": "Resolver problemas de leis de Newton e movimento uniforme.",
-    "disciplina": "Fisica"
+    "disciplina": "Fisica",
+    "data": "2025-11-15"
   },
   {
     "titulo": "Fisica - Termodinamica",
     "desc": "Estudar as leis da termodinamica e calcular eficiencia de maquinas termicas.",
-    "disciplina": "Fisica"
+    "disciplina": "Fisica",
+    "data": "2025-11-17"
   },
   {
     "titulo": "Quimica - Tabela Periodica",
     "desc": "Memorizar os grupos principais e suas propriedades.",
-    "disciplina": "Quimica"
+    "disciplina": "Quimica",
+    "data": "2025-11-19"
   },
   {
     "titulo": "Quimica - Estequiometria",
     "desc": "Balancear equacoes quimicas e calcular proporcoes.",
-    "disciplina": "Quimica"
+    "disciplina": "Quimica",
+    "data": "2025-11-21"
   },
   {
     "titulo": "Geografia - Cartografia",
     "desc": "Praticar escalas e interpretar mapas tematicos.",
-    "disciplina": "Geografia"
+    "disciplina": "Geografia",
+    "data": "2025-11-24"
   },
   {
     "titulo": "Geografia - Globalizacao",
     "desc": "Debater os impactos economicos e culturais da globalizacao.",
-    "disciplina": "Geografia"
+    "disciplina": "Geografia",
+    "data": "2025-11-26"
   },
   {
     "titulo": "Ingles - Vocabulario",
     "desc": "Aprender 20 palavras novas e usa-las em frases.",
-    "disciplina": "Ingles"
+    "disciplina": "Ingles",
+    "data": "2025-11-28"
   },
   {
     "titulo": "Ingles - Listening",
     "desc": "Assistir a um video em ingles e resumir o conteudo.",
-    "disciplina": "Ingles"
+    "disciplina": "Ingles",
+    "data": "2025-11-30"
   },
   {
     "titulo": "Artes - Movimentos Artisticos",
     "desc": "Pesquisar sobre o Impressionismo e identificar obras famosas.",
-    "disciplina": "Artes"
+    "disciplina": "Artes",
+    "data": "2025-12-02"
   },
   {
     "titulo": "Filosofia - Etica",
     "desc": "Fazer uma pesquisa baseando-se em uma pergunta anti-etica",
-    "disciplina": "Filosofia"
+    "disciplina": "Filosofia",
+    "data": "2025-12-04"
   },
   {
     "titulo": "Educacao Fisica - Saude",
     "desc": "Elaborar um plano de exercicios semanais para condicionamento fisico.",
-    "disciplina": "Educacao Fisica"
+    "disciplina": "Educacao Fisica",
+    "data": "2025-12-06"
   },
   {
     "titulo": "Fisica-Prova sobre Gases",
     "desc": "Estudar sobre gases e termodinamica",
-    "disciplina": "Fisica"
+    "disciplina": "Fisica",
+    "data": "2025-12-08"
+  },
+  {
+    "titulo": "Teste",
+    "desc": "teste",
+    "disciplina": "Teste",
+    "data": "2026-07-03"
   }
 ]
