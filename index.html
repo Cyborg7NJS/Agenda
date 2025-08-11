@@ -38,6 +38,7 @@
                 {{agendaTable}}
             </tbody>
         </table>
+        <button id="toggleMostrar" class="btn btn-outline-dark mb-3 mt-6">Mostrar mais</button>
     </div>
 <div class="card text-center mb-5 me-5 ms-5">
   <div class="card-header" id="funcoes">
@@ -82,6 +83,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+    
+    <script>    
+    const btn = document.getElementById('toggleMostrar');
+    const linhas = document.querySelectorAll('.tarefa');
+    let mostrandoMais = false;
+
+    btn.addEventListener('click', () => {
+        mostrandoMais = !mostrandoMais;
+
+        linhas.forEach((tr, i) => {
+            if (i >= 15) {
+                tr.style.display = mostrandoMais ? '' : 'none';
+            }
+        });
+
+        btn.textContent = mostrandoMais ? 'Mostrar menos' : 'Mostrar mais';
+    });</script>
 </body>
 
 </html>
