@@ -44,7 +44,7 @@ LA.forEach((agenda, index) => {
 
     const htmlContent = fs.readFileSync('index.html', 'utf-8');
     const finalHtml = htmlContent.replace('{{agendaTable}}', agendaTable);
-
+    
     res.send(finalHtml);
 });
 
