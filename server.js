@@ -244,7 +244,7 @@ app.get('/atualizar', (req, res) => {
 
 
 app.post('/atualizar', (req, res) => {
-    const { titulo, Ntitle, Ndisc, Ndesc, } = req.body;
+    const { titulo, Ntitle, Ndisc, Ndesc, Ndata} = req.body;
     const LA = lerAgendas();
 
     const agendaIndex = LA.findIndex(agenda => agenda.titulo.toLowerCase() === titulo.toLowerCase());
